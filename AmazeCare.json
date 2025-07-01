@@ -1,0 +1,1489 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AmazeCare API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Admins/secure-data": {
+      "get": {
+        "tags": [
+          "Admins"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admins/Patients": {
+      "get": {
+        "tags": [
+          "Admins"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admins/Doctors": {
+      "get": {
+        "tags": [
+          "Admins"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admins/Appointments": {
+      "get": {
+        "tags": [
+          "Admins"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admins/DeletePatient/{id}": {
+      "delete": {
+        "tags": [
+          "Admins"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admins/DeleteDoctor/{id}": {
+      "delete": {
+        "tags": [
+          "Admins"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Appointments": {
+      "get": {
+        "tags": [
+          "Appointments"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Appointments/{id}": {
+      "get": {
+        "tags": [
+          "Appointments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Appointments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointment"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointment"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Appointments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Doctors/Appointments/{doctorId}": {
+      "get": {
+        "tags": [
+          "Doctors"
+        ],
+        "parameters": [
+          {
+            "name": "doctorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Doctors/Update-Consultation": {
+      "put": {
+        "tags": [
+          "Doctors"
+        ],
+        "parameters": [
+          {
+            "name": "appointmentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "details",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "prescription",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/configuration": {
+      "get": {
+        "tags": [
+          "FileConfiguration"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "FileConfiguration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileConfiguration"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileConfiguration"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileConfiguration"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/outputcache/{region}": {
+      "delete": {
+        "tags": [
+          "OutputCache"
+        ],
+        "parameters": [
+          {
+            "name": "region",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patients/MedicalRecords/{patientId}": {
+      "get": {
+        "tags": [
+          "Patients"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patients/Appointments/{patientId}": {
+      "get": {
+        "tags": [
+          "Patients"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AggregateRouteConfig": {
+        "type": "object",
+        "properties": {
+          "routeKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "parameter": {
+            "type": "string",
+            "nullable": true
+          },
+          "jsonPath": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Appointment": {
+        "required": [
+          "appointmentDate"
+        ],
+        "type": "object",
+        "properties": {
+          "appointmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "appointmentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "consultationFeeDetails": {
+            "type": "string",
+            "nullable": true
+          },
+          "prescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "billAmount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patient": {
+            "$ref": "#/components/schemas/Patient"
+          },
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctor": {
+            "$ref": "#/components/schemas/Doctor"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Doctor": {
+        "required": [
+          "doctorName"
+        ],
+        "type": "object",
+        "properties": {
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doctorName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "experience": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "qualification": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialization": {
+            "type": "string",
+            "nullable": true
+          },
+          "appointments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Appointment"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileAggregateRoute": {
+        "type": "object",
+        "properties": {
+          "aggregator": {
+            "type": "string",
+            "nullable": true
+          },
+          "priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "routeIsCaseSensitive": {
+            "type": "boolean"
+          },
+          "routeKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "routeKeysConfig": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AggregateRouteConfig"
+            },
+            "nullable": true
+          },
+          "upstreamHeaderTemplates": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "upstreamHost": {
+            "type": "string",
+            "nullable": true
+          },
+          "upstreamHttpMethod": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "upstreamPathTemplate": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileAuthenticationOptions": {
+        "type": "object",
+        "properties": {
+          "allowedScopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "authenticationProviderKey": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "authenticationProviderKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileCacheOptions": {
+        "type": "object",
+        "properties": {
+          "ttlSeconds": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "region": {
+            "type": "string",
+            "nullable": true
+          },
+          "header": {
+            "type": "string",
+            "nullable": true
+          },
+          "enableContentHashing": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileConfiguration": {
+        "type": "object",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileRoute"
+            },
+            "nullable": true
+          },
+          "dynamicRoutes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileDynamicRoute"
+            },
+            "nullable": true
+          },
+          "aggregates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileAggregateRoute"
+            },
+            "nullable": true
+          },
+          "globalConfiguration": {
+            "$ref": "#/components/schemas/FileGlobalConfiguration"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileDynamicRoute": {
+        "type": "object",
+        "properties": {
+          "downstreamHttpVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "downstreamHttpVersionPolicy": {
+            "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "rateLimitRule": {
+            "$ref": "#/components/schemas/FileRateLimitRule"
+          },
+          "serviceName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileGlobalConfiguration": {
+        "type": "object",
+        "properties": {
+          "baseUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "cacheOptions": {
+            "$ref": "#/components/schemas/FileCacheOptions"
+          },
+          "downstreamHttpVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "downstreamHttpVersionPolicy": {
+            "type": "string",
+            "nullable": true
+          },
+          "downstreamScheme": {
+            "type": "string",
+            "nullable": true
+          },
+          "httpHandlerOptions": {
+            "$ref": "#/components/schemas/FileHttpHandlerOptions"
+          },
+          "loadBalancerOptions": {
+            "$ref": "#/components/schemas/FileLoadBalancerOptions"
+          },
+          "metadataOptions": {
+            "$ref": "#/components/schemas/FileMetadataOptions"
+          },
+          "qoSOptions": {
+            "$ref": "#/components/schemas/FileQoSOptions"
+          },
+          "rateLimitOptions": {
+            "$ref": "#/components/schemas/FileRateLimitOptions"
+          },
+          "requestIdKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "securityOptions": {
+            "$ref": "#/components/schemas/FileSecurityOptions"
+          },
+          "serviceDiscoveryProvider": {
+            "$ref": "#/components/schemas/FileServiceDiscoveryProvider"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileHostAndPort": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileHttpHandlerOptions": {
+        "type": "object",
+        "properties": {
+          "allowAutoRedirect": {
+            "type": "boolean"
+          },
+          "maxConnectionsPerServer": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pooledConnectionLifetimeSeconds": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "useCookieContainer": {
+            "type": "boolean"
+          },
+          "useProxy": {
+            "type": "boolean"
+          },
+          "useTracing": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileLoadBalancerOptions": {
+        "type": "object",
+        "properties": {
+          "expiry": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileMetadataOptions": {
+        "type": "object",
+        "properties": {
+          "currentCulture": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberStyle": {
+            "type": "string",
+            "nullable": true
+          },
+          "separators": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "stringSplitOption": {
+            "type": "string",
+            "nullable": true
+          },
+          "trimChars": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileQoSOptions": {
+        "type": "object",
+        "properties": {
+          "durationOfBreak": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "exceptionsAllowedBeforeBreaking": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeoutValue": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileRateLimitOptions": {
+        "type": "object",
+        "properties": {
+          "clientIdHeader": {
+            "type": "string",
+            "nullable": true
+          },
+          "disableRateLimitHeaders": {
+            "type": "boolean"
+          },
+          "httpStatusCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quotaExceededMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "rateLimitCounterPrefix": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileRateLimitRule": {
+        "type": "object",
+        "properties": {
+          "clientWhitelist": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "enableRateLimiting": {
+            "type": "boolean"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "period": {
+            "type": "string",
+            "nullable": true
+          },
+          "periodTimespan": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileRoute": {
+        "type": "object",
+        "properties": {
+          "addClaimsToRequest": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "addHeadersToRequest": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "addQueriesToRequest": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "authenticationOptions": {
+            "$ref": "#/components/schemas/FileAuthenticationOptions"
+          },
+          "changeDownstreamPathTemplate": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "dangerousAcceptAnyServerCertificateValidator": {
+            "type": "boolean"
+          },
+          "delegatingHandlers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "downstreamHeaderTransform": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "downstreamHostAndPorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileHostAndPort"
+            },
+            "nullable": true
+          },
+          "downstreamHttpMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "downstreamHttpVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "downstreamHttpVersionPolicy": {
+            "type": "string",
+            "nullable": true
+          },
+          "downstreamPathTemplate": {
+            "type": "string",
+            "nullable": true
+          },
+          "downstreamScheme": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileCacheOptions": {
+            "$ref": "#/components/schemas/FileCacheOptions"
+          },
+          "httpHandlerOptions": {
+            "$ref": "#/components/schemas/FileHttpHandlerOptions"
+          },
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "loadBalancerOptions": {
+            "$ref": "#/components/schemas/FileLoadBalancerOptions"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "qoSOptions": {
+            "$ref": "#/components/schemas/FileQoSOptions"
+          },
+          "rateLimitOptions": {
+            "$ref": "#/components/schemas/FileRateLimitRule"
+          },
+          "requestIdKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "routeClaimsRequirement": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "routeIsCaseSensitive": {
+            "type": "boolean"
+          },
+          "securityOptions": {
+            "$ref": "#/components/schemas/FileSecurityOptions"
+          },
+          "serviceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "serviceNamespace": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "upstreamHeaderTemplates": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "upstreamHeaderTransform": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "upstreamHost": {
+            "type": "string",
+            "nullable": true
+          },
+          "upstreamHttpMethod": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "upstreamPathTemplate": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileSecurityOptions": {
+        "type": "object",
+        "properties": {
+          "ipAllowedList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "ipBlockedList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "excludeAllowedFromBlocked": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileServiceDiscoveryProvider": {
+        "type": "object",
+        "properties": {
+          "scheme": {
+            "type": "string",
+            "nullable": true
+          },
+          "host": {
+            "type": "string",
+            "nullable": true
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "configurationKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "pollingInterval": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "namespace": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDTO": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MedicalRecord": {
+        "required": [
+          "treatment"
+        ],
+        "type": "object",
+        "properties": {
+          "medicalRecordId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "treatment": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "patientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patient": {
+            "$ref": "#/components/schemas/Patient"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Patient": {
+        "required": [
+          "patientName"
+        ],
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patientName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "patientDOB": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "patientAge": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "patientEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "patientPhoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "symptoms": {
+            "type": "string",
+            "nullable": true
+          },
+          "appointments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Appointment"
+            },
+            "nullable": true
+          },
+          "medicalRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MedicalRecord"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterDTO": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "required": [
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "username": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter 'Bearer' [space] and then your valid JWT token.\n\nExample: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI...",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
